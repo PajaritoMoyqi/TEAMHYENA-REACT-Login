@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TEAMHYENA-REACT-Login/static/css/main.a0ee0d1d.chunk.css",
-    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.12f8243c.chunk.js",
-    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.12f8243c.chunk.js.map",
+    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.f6ff899f.chunk.js",
+    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.f6ff899f.chunk.js.map",
     "runtime-main.js": "/TEAMHYENA-REACT-Login/static/js/runtime-main.1c3ba9ad.js",
     "runtime-main.js.map": "/TEAMHYENA-REACT-Login/static/js/runtime-main.1c3ba9ad.js.map",
     "static/js/2.0334a65f.chunk.js": "/TEAMHYENA-REACT-Login/static/js/2.0334a65f.chunk.js",
@@ -11,13 +11,12 @@
     "static/js/3.0145d5c8.chunk.js.map": "/TEAMHYENA-REACT-Login/static/js/3.0145d5c8.chunk.js.map",
     "index.html": "/TEAMHYENA-REACT-Login/index.html",
     "static/css/main.a0ee0d1d.chunk.css.map": "/TEAMHYENA-REACT-Login/static/css/main.a0ee0d1d.chunk.css.map",
-    "static/js/2.0334a65f.chunk.js.LICENSE.txt": "/TEAMHYENA-REACT-Login/static/js/2.0334a65f.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/TEAMHYENA-REACT-Login/static/media/logo.6ce24c58.svg"
+    "static/js/2.0334a65f.chunk.js.LICENSE.txt": "/TEAMHYENA-REACT-Login/static/js/2.0334a65f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1c3ba9ad.js",
     "static/js/2.0334a65f.chunk.js",
     "static/css/main.a0ee0d1d.chunk.css",
-    "static/js/main.12f8243c.chunk.js"
+    "static/js/main.f6ff899f.chunk.js"
   ]
 }
