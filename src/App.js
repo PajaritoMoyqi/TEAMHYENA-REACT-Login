@@ -14,7 +14,7 @@ const getRandomUser = async () => {
 
 const App = () => {
 
-  const [info, setInfo] = useState({
+  const initialInfo = {
     login: false,
     name: '',
     birthDate: '',
@@ -23,7 +23,9 @@ const App = () => {
     phoneNumber: '',
     subscription: {},
     employment: ''
-  });
+  }
+
+  const [info, setInfo] = useState(initialInfo);
 
   const nameInput = useRef();
   const pwInput = useRef();
@@ -31,8 +33,6 @@ const App = () => {
   const { login, name, birthDate, address, email, phoneNumber, subscription, employment } = info;
 
   const submitUser = () => {
-    const user = nameInput.current.value;
-    const pwlength = pwInput.current.value.length;
 
     getRandomUser()
       .then(raw => {
@@ -51,8 +51,14 @@ const App = () => {
 
         nameInput.current.value = '';
         pwInput.current.value = '';
-      })
+      });
+  }
 
+  const logoutUser = () => {
+    setInfo({
+      ...info,
+      ...initialInfo
+    });
   }
 
   return (
@@ -63,11 +69,12 @@ const App = () => {
         </header>
         <section className="App-section">
           <div className="input-box">
-            <label>User Name</label>
-            <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
-            <label>Password</label>
-            <input name="password" type="password" placeholder="Password" ref={pwInput} required />
-            <input type="button" value="Login" onClick={submitUser} />
+              <input type="button" value="Logout" onClick={logoutUser} />
+              <label>User Name</label>
+              <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
+              <label>Password</label>
+              <input name="password" type="password" placeholder="Password" ref={pwInput} required />
+              <input type="button" value="Login" onClick={submitUser} />
           </div>
           <div className="output-box">
             <p><strong>{login && `${name}님 반갑습니다.`}</strong></p>
