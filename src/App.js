@@ -22,7 +22,8 @@ const App = () => {
     email: '',
     phoneNumber: '',
     subscription: {},
-    employment: ''
+    employment: '',
+    alert: false
   }
 
   const [info, setInfo] = useState(initialInfo);
@@ -30,27 +31,42 @@ const App = () => {
   const nameInput = useRef();
   const pwInput = useRef();
 
-  const { login, name, birthDate, address, email, phoneNumber, subscription, employment } = info;
+  const { login, name, birthDate, address, email, phoneNumber, subscription, employment, alert } = info;
 
   const submitUser = () => {
 
+    if(!nameInput.current.value || !pwInput.current.value) {
+      setInfo({
+        ...info,
+        alert: true
+      });
+      
+      nameInput.current.value = '';
+      pwInput.current.value = '';
+
+      return;
+    }
+
     getRandomUser()
       .then(raw => {
+        
+        nameInput.current.value = '';
+        pwInput.current.value = '';
+
         const {country, state, city, street_name, street_address, zip_code} = raw.data.address;
         setInfo({
           ...info,
           login: true,
-          name: raw.data.first_name + raw.data.last_name,
+          name: raw.data.first_name + ' ' + raw.data.last_name,
           birthDate: raw.data.date_of_birth,
           address: `${street_address}, ${street_name}, ${city}, ${state}, ${zip_code} ${country}`,
           email: raw.data.email,
           phoneNumber: raw.data.phone_number,
           subscription: raw.data.subscription,
-          employment: raw.data.employment.title
+          employment: raw.data.employment.title,
+          alert: false
         })
 
-        nameInput.current.value = '';
-        pwInput.current.value = '';
       });
   }
 
@@ -69,20 +85,26 @@ const App = () => {
         </header>
         <section className="App-section">
           <div className="input-box">
-              <input type="button" value="Logout" onClick={logoutUser} />
-              <label>User Name</label>
-              <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
-              <label>Password</label>
-              <input name="password" type="password" placeholder="Password" ref={pwInput} required />
-              <input type="button" value="Login" onClick={submitUser} />
+            {login ?
+                <input className="logout-btn" type="button" value="Logout" onClick={logoutUser} />
+              :
+              <>
+                <label>User Name</label>
+                <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
+                <label>Password</label>
+                <input name="password" type="password" placeholder="Password" ref={pwInput} required />
+                <input type="button" value="Login" onClick={submitUser} />
+              </>
+            }
+            {alert && <p className="alert-msg">You need to enter both id and pw</p>}
           </div>
           <div className="output-box">
-            <p><strong>{login && `${name}님 반갑습니다.`}</strong></p>
+            <p><strong>{login && `Wellcome, ${name}`}</strong></p>
             {login && <p><strong>Date of Birth : </strong> {birthDate}</p>}
             {login && <p><strong>Address : </strong> {address}</p>}
             {login && <p><strong>Email : </strong> {email}</p>}
             {login && <p><strong>Phone Number : </strong> {phoneNumber}</p>}
-            {login && <p><strong>Employment : </strong> {employment}</p>}
+            {login && <p><strong>Job : </strong> {employment}</p>}
             {login && (<p><strong>Subscription : </strong> {subscription ? "yes" : "no"}</p>)}
           </div>
         </section>

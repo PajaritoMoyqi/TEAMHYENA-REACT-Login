@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
+input[type=button]:hover {
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -49,6 +53,9 @@
   font-size: 1.8rem;
   margin-bottom: 1.7rem;
 }
+.App-section .input-box .logout-btn {
+  margin-bottom: 0;
+}
 .App-section .input-box label {
   display: block;
   font-size: 2rem;
@@ -58,4 +65,14 @@
 }
 .App-section .input-box label:nth-child(1) {
   margin-top: 1.7rem;
+}
+.App-section .input-box .alert-msg {
+  font-size: 1.3rem;
+}
+
+.App-section .output-box p {
+  font-size: 1.3rem
+}
+.App-section .output-box p strong {
+  font-size: 1.5rem;
 }
