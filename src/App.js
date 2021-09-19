@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import axios from "axios";
 
 import writingsArr from './writing.json';
+const writingsArrRev = [...writingsArr].reverse();
 
 const getRandomUser = async () => {
   try {
@@ -25,7 +26,8 @@ const App = () => {
     phoneNumber: '',
     subscription: {},
     employment: '',
-    alert: false
+    alert: false,
+    showPersonalData: false
   }
 
   const [info, setInfo] = useState(initialInfo);
@@ -33,7 +35,7 @@ const App = () => {
   const nameInput = useRef();
   const pwInput = useRef();
 
-  const { login, name, birthDate, address, email, phoneNumber, subscription, employment, alert } = info;
+  const { login, name, birthDate, address, email, phoneNumber, subscription, employment, alert, showPersonalData } = info;
 
   const submitUser = () => {
 
@@ -78,6 +80,14 @@ const App = () => {
       ...initialInfo
     });
   }
+  const showUserData = () => {
+    setInfo({
+      ...info,
+      showPersonalData: !info.showPersonalData
+    })
+  }
+
+  const showDataStyle = {transform: "rotate(180deg)"}
 
   return (
     <div className="App">
@@ -101,17 +111,24 @@ const App = () => {
             }
             {alert && <p className="alert-msg">You need to enter both id and pw</p>}
           </div>
-          <div className="output-box">
-            <p><strong>{login && `Wellcome, ${name}`}</strong></p>
-            <div className="personal-data-box">
-              {login && <p><strong>Date of Birth : </strong> {birthDate}</p>}
-              {login && <p><strong>Address : </strong> {address}</p>}
-              {login && <p><strong>Email : </strong> {email}</p>}
-              {login && <p><strong>Phone Number : </strong> {phoneNumber}</p>}
-              {login && <p><strong>Job : </strong> {employment}</p>}
-              {login && (<p><strong>Subscription : </strong> {subscription ? "yes" : "no"}</p>)}
+          {
+            login && <div className="output-box">
+              <p className="personal-data-hello"><strong>{login && `Wellcome, ${name}`}</strong></p><span className="show-personal-data-btn" onClick={showUserData} style={showPersonalData ? showDataStyle : {}}>{showPersonalData ? "close" : "show"}</span>
+              <div className="personal-data-box">
+                {
+                  showPersonalData && 
+                    <>
+                      <p><strong>Date of Birth : </strong> {birthDate}</p>
+                      <p><strong>Address : </strong> {address}</p>
+                      <p><strong>Email : </strong> {email}</p>
+                      <p><strong>Phone Number : </strong> {phoneNumber}</p>
+                      <p><strong>Job : </strong> {employment}</p>
+                      <p><strong>Subscription : </strong> {subscription ? "yes" : "no"}</p>
+                    </>
+                }
+              </div>
             </div>
-          </div>
+          }
           {
             login && <div className="table-box">
               <table>
@@ -125,10 +142,10 @@ const App = () => {
                 </thead>
                 <tbody>
                   {
-                    writingsArr.map((item, idx) => {
+                    writingsArrRev.map((item, idx) => {
                       return (
-                        <tr key={idx+1}>
-                          <td>{idx+1}</td>
+                        <tr key={writingsArrRev.length - idx}>
+                          <td>{writingsArrRev.length - idx}</td>
                           <td>{item.title}</td>
                           <td>{item.author}</td>
                           <td>{item.date}</td>

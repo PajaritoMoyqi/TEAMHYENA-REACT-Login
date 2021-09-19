@@ -71,8 +71,34 @@ input[type=button]:hover {
 }
 
 .App-section .output-box p {
-  font-size: 1.3rem
+  font-size: 1.3rem;
+}
+.App-section .output-box p.personal-data-hello {
+  display: inline-block;
+  margin-right: 1rem;
 }
 .App-section .output-box p strong {
   font-size: 1.5rem;
+}
+
+.App-section .output-box .show-personal-data-btn {
+  color: black;
+  background-color: wheat;
+  border: .5rem solid wheat;
+  border-radius: 10rem;
+}
+.App-section .output-box .show-personal-data-btn:hover {
+  cursor: pointer;
+}
+
+.App-section .table-box {
+  font-size: 1.8rem;
+}
+.App-section .table-box table {
+  border-collapse: separate;
+  border-spacing: 2.5rem 1rem;
+}
+.App-section .table-box table tbody tr td:nth-child(2):hover {
+  cursor: pointer;
+  color: red;
 }
