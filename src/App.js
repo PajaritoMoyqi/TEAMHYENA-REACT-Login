@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 
 import axios from "axios";
 
+import writingsArr from './writing.json';
+
 const getRandomUser = async () => {
   try {
     const data = await axios.get("https://random-data-api.com/api/users/random_user");
@@ -85,28 +87,59 @@ const App = () => {
         </header>
         <section className="App-section">
           <div className="input-box">
-            {login ?
+            { 
+              login ?
                 <input className="logout-btn" type="button" value="Logout" onClick={logoutUser} />
               :
-              <>
-                <label>User Name</label>
-                <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
-                <label>Password</label>
-                <input name="password" type="password" placeholder="Password" ref={pwInput} required />
-                <input type="button" value="Login" onClick={submitUser} />
-              </>
+                <>
+                  <label>User Name</label>
+                  <input name="housename" type="text" placeholder="User Name" ref={nameInput} required autoFocus />
+                  <label>Password</label>
+                  <input name="password" type="password" placeholder="Password" ref={pwInput} required />
+                  <input type="button" value="Login" onClick={submitUser} />
+                </>
             }
             {alert && <p className="alert-msg">You need to enter both id and pw</p>}
           </div>
           <div className="output-box">
             <p><strong>{login && `Wellcome, ${name}`}</strong></p>
-            {login && <p><strong>Date of Birth : </strong> {birthDate}</p>}
-            {login && <p><strong>Address : </strong> {address}</p>}
-            {login && <p><strong>Email : </strong> {email}</p>}
-            {login && <p><strong>Phone Number : </strong> {phoneNumber}</p>}
-            {login && <p><strong>Job : </strong> {employment}</p>}
-            {login && (<p><strong>Subscription : </strong> {subscription ? "yes" : "no"}</p>)}
+            <div className="personal-data-box">
+              {login && <p><strong>Date of Birth : </strong> {birthDate}</p>}
+              {login && <p><strong>Address : </strong> {address}</p>}
+              {login && <p><strong>Email : </strong> {email}</p>}
+              {login && <p><strong>Phone Number : </strong> {phoneNumber}</p>}
+              {login && <p><strong>Job : </strong> {employment}</p>}
+              {login && (<p><strong>Subscription : </strong> {subscription ? "yes" : "no"}</p>)}
+            </div>
           </div>
+          {
+            login && <div className="table-box">
+              <table>
+                <thead>
+                  <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>날짜</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    writingsArr.map((item, idx) => {
+                      return (
+                        <tr key={idx+1}>
+                          <td>{idx+1}</td>
+                          <td>{item.title}</td>
+                          <td>{item.author}</td>
+                          <td>{item.date}</td>
+                        </tr>
+                      )
+                    })
+                  }
+                </tbody>
+              </table>
+            </div>
+          }
         </section>
       </div>
     </div>
