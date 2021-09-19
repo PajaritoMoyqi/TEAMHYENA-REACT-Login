@@ -113,7 +113,8 @@ const App = () => {
           </div>
           {
             login && <div className="output-box">
-              <p className="personal-data-hello"><strong>{login && `Wellcome, ${name}`}</strong></p><span className="show-personal-data-btn" onClick={showUserData} style={showPersonalData ? showDataStyle : {}}>{showPersonalData ? "close" : "show"}</span>
+              <p className="personal-data-hello"><strong>{login && `Wellcome, ${name}`}</strong></p>
+              <span className="show-personal-data-btn" onClick={showUserData} style={showPersonalData ? showDataStyle : {}}>{showPersonalData ? "close" : "show"}</span>
               <div className="personal-data-box">
                 {
                   showPersonalData && 
@@ -134,10 +135,10 @@ const App = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                    <th>날짜</th>
+                    <th>Number</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
