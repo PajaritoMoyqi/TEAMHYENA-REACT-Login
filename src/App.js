@@ -6,8 +6,8 @@ import { Route } from 'react-router-dom';
 const App = () => {
   return (
     <>
-      <Route path="/TEAMHYENA-REACT-Login/" component={Main} exact />
-      <Route path="/TEAMHYENA-REACT-Login/join" component={Join} />
+      <Route path="/" component={Main} exact />
+      <Route path="//join" component={Join} />
     </>
   );
 }
