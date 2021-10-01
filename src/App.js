@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 const App = () => {
   return (
     <>
-      <Route path="/" component={Main} exact />
+      <Route exact path="/" component={Main} />
       <Route path="/join" component={Join} />
     </>
   );
