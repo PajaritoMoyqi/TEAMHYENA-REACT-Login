@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/TEAMHYENA-REACT-Login/static/css/main.26182bf6.chunk.css",
-    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.6be72e7d.chunk.js",
-    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.6be72e7d.chunk.js.map",
+    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.f1cd95ce.chunk.js",
+    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.f1cd95ce.chunk.js.map",
     "runtime-main.js": "/TEAMHYENA-REACT-Login/static/js/runtime-main.0ed7e567.js",
     "runtime-main.js.map": "/TEAMHYENA-REACT-Login/static/js/runtime-main.0ed7e567.js.map",
-    "static/js/2.c8129eab.chunk.js": "/TEAMHYENA-REACT-Login/static/js/2.c8129eab.chunk.js",
-    "static/js/2.c8129eab.chunk.js.map": "/TEAMHYENA-REACT-Login/static/js/2.c8129eab.chunk.js.map",
+    "static/js/2.f8ce21e6.chunk.js": "/TEAMHYENA-REACT-Login/static/js/2.f8ce21e6.chunk.js",
+    "static/js/2.f8ce21e6.chunk.js.map": "/TEAMHYENA-REACT-Login/static/js/2.f8ce21e6.chunk.js.map",
     "static/js/3.915693d2.chunk.js": "/TEAMHYENA-REACT-Login/static/js/3.915693d2.chunk.js",
     "static/js/3.915693d2.chunk.js.map": "/TEAMHYENA-REACT-Login/static/js/3.915693d2.chunk.js.map",
     "index.html": "/TEAMHYENA-REACT-Login/index.html",
     "static/css/main.26182bf6.chunk.css.map": "/TEAMHYENA-REACT-Login/static/css/main.26182bf6.chunk.css.map",
-    "static/js/2.c8129eab.chunk.js.LICENSE.txt": "/TEAMHYENA-REACT-Login/static/js/2.c8129eab.chunk.js.LICENSE.txt"
+    "static/js/2.f8ce21e6.chunk.js.LICENSE.txt": "/TEAMHYENA-REACT-Login/static/js/2.f8ce21e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0ed7e567.js",
-    "static/js/2.c8129eab.chunk.js",
+    "static/js/2.f8ce21e6.chunk.js",
     "static/css/main.26182bf6.chunk.css",
-    "static/js/main.6be72e7d.chunk.js"
+    "static/js/main.f1cd95ce.chunk.js"
   ]
 }
