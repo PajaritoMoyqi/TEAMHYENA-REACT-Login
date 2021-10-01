@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Route path="/" component={Main} exact />
-      <Route path="//join" component={Join} />
+      <Route path="/join" component={Join} />
     </>
   );
 }
