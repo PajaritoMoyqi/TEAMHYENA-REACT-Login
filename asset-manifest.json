@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TEAMHYENA-REACT-Login/static/css/main.26182bf6.chunk.css",
-    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.acff434e.chunk.js",
-    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.acff434e.chunk.js.map",
+    "main.js": "/TEAMHYENA-REACT-Login/static/js/main.63a54a4a.chunk.js",
+    "main.js.map": "/TEAMHYENA-REACT-Login/static/js/main.63a54a4a.chunk.js.map",
     "runtime-main.js": "/TEAMHYENA-REACT-Login/static/js/runtime-main.0ed7e567.js",
     "runtime-main.js.map": "/TEAMHYENA-REACT-Login/static/js/runtime-main.0ed7e567.js.map",
     "static/js/2.caf001eb.chunk.js": "/TEAMHYENA-REACT-Login/static/js/2.caf001eb.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0ed7e567.js",
     "static/js/2.caf001eb.chunk.js",
     "static/css/main.26182bf6.chunk.css",
-    "static/js/main.acff434e.chunk.js"
+    "static/js/main.63a54a4a.chunk.js"
   ]
 }
