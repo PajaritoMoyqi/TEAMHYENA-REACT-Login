@@ -7,8 +7,8 @@ const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route path="/join/" component={Join} />
+        <Route exact path="/"><Main /></Route>
+        <Route path="/join/"><Join /></Route>
       </Switch>
     </BrowserRouter>
   );
